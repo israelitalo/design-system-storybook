@@ -25,12 +25,12 @@ export function App() {
       <form className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10">
         <label htmlFor="email" className="flex flex-col gap-3">
           <Text className="font-semibold">Endereço de e-mail</Text>
-          <TextInput icon={<Envelope />} inputSize="lg" type="email" id="email" placeholder="Digite seu e-mail" />
+          <TextInput icon={<Envelope />} fullWith inputSize="lg" type="email" id="email" placeholder="Digite seu e-mail" />
         </label>
 
         <label htmlFor="password" className="flex flex-col gap-3">
           <Text className="font-semibold">Sua senha</Text>
-          <TextInput icon={<Lock />} inputSize="lg" type="password" id="password" placeholder="******" />
+          <TextInput icon={<Lock />} fullWith inputSize="lg" type="password" id="password" placeholder="******" />
         </label>
 
         <label htmlFor="remember" className="flex items-center gap-2">
