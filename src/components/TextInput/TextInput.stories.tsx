@@ -23,7 +23,8 @@ export default {
 
 export const ExampleWithIcon: StoryObj<TextInputProps> = {
   args: {
-    icon: <Envelope />
+    icon: <Envelope />,
+    fullWith: false,
   },
   argTypes: {
     children: {
@@ -40,11 +41,19 @@ export const ExampleWithIcon: StoryObj<TextInputProps> = {
 }
 
 export const ExampleWithoutIcon: StoryObj<TextInputProps> = {
+  args: {
+    fullWith: false,
+  },
   argTypes: {
     children: {
       table: {
         disable: true
       }
     },
+    icon: {
+      table: {
+        disable: true
+      }
+    }
   }
 }

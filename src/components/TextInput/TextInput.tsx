@@ -15,12 +15,6 @@ const TextInputIcon = ({ children }: TextInputIconProps) => {
   )
 }
 
-export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  inputSize?: 'sm' | 'md' | 'lg'
-  fullWith?: boolean
-  icon?: ReactNode | JSX.Element
-}
-
 interface TextInputComponentProps extends InputHTMLAttributes<HTMLInputElement> {
   inputSize?: 'sm' | 'md' | 'lg'
   fullWith?: boolean
@@ -33,12 +27,18 @@ const TextInputComponent: React.FC<TextInputComponentProps> = ({ inputSize = 'md
         'bg-transparent flex-1 text-gray-100 outline-none text-xs placeholder:text-gray-400',
       ) }
       {...rest}
-      />
+    />
   );
 };
 
+export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
+  inputSize?: 'sm' | 'md' | 'lg'
+  fullWith?: boolean
+  icon?: ReactNode | JSX.Element
+}
+
 export const TextInput = (props: TextInputProps) => {
-  const { inputSize, icon } = props;
+  const { inputSize, icon, fullWith } = props;
   return (
     <div
       className={clsx(
@@ -47,6 +47,8 @@ export const TextInput = (props: TextInputProps) => {
           'text-xs py-1.5 px-3': inputSize === 'sm',
           'text-sm py-3 px-3': inputSize === 'md',
           'text-md py-4 px-3': inputSize === 'lg',
+          'w-full': fullWith,
+          'w-60': !fullWith
         }
       )}
     >

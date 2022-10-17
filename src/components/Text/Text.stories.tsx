@@ -7,7 +7,7 @@ export default {
   component: Text,
   args: {
     children: 'Enviar',
-    size: 'md'
+    size: 'md',
   },
   argTypes: {
     size: {
